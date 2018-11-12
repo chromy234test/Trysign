@@ -41,7 +41,7 @@
     </label>
     <label>
         <br>
-        <input type="button" id="SignButton" onclick="SignOnClick()" name="SignButton" value="Sign" disabled>
+        <input type="button" id="SignButton" onclick="SignOnClick()" name="SignButton" value="encrypt" disabled>
     </label>
     <br />
     <br />
@@ -50,6 +50,15 @@
         <br />
         <textarea id="Signature" rows="8" style="width: 650px"></textarea>
     </label>
+	<label>
+        <br>
+        <input type="button" id="DeSignButton" onclick="DeSignOnClick()" name="DeSignButton" value="Decrypt" disabled>
+    </label>
     <br />
+	    <label>
+        Original Text：
+        <br />
+        <textarea id="DeText" rows="8" style="width: 650px"></textarea>
+    </label>
 </body>
 </html>
