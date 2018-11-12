@@ -15,6 +15,17 @@
         function (e) {
             document.getElementById("Signature").value = e.detail;
         }, false);
+		
+		function DeSignOnClick() {
+            var text = document.getElementById("Signature").value;
+            var event = new CustomEvent('DeSignRequest', { 'detail': text });
+            document.dispatchEvent(event);
+        }
+
+        document.addEventListener('DeSignResponse',
+        function (e) {
+            document.getElementById("DeText").value = e.detail;
+        }, false);
 
     </script>
 </head>
@@ -46,7 +57,7 @@
     <br />
     <br />
     <label>
-        Signature：
+        Encrypt text：
         <br />
         <textarea id="Signature" rows="8" style="width: 650px"></textarea>
     </label>
@@ -55,6 +66,7 @@
         <input type="button" id="DeSignButton" onclick="DeSignOnClick()" name="DeSignButton" value="Decrypt" disabled>
     </label>
     <br />
+	<br />
 	    <label>
         Original Text：
         <br />
